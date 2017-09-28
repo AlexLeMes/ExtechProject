@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class pickups : MonoBehaviour {
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "health")
+        {
+            Debug.Log("player_pickedup_health");
+        }
+        if (other.gameObject.tag == "ammo")
+        {
+            Debug.Log("player_pickedup_ammo");
+        }
+        if (other.gameObject.tag == "special")
+        {
+            Debug.Log("player_pickedup_special");
+        }
+    }
+}

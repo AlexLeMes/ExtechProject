@@ -9,6 +9,7 @@ public class pickups : MonoBehaviour {
         if(other.gameObject.tag == "health")
         {
             Debug.Log("player_pickedup_health");
+            Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "ammo")
         {

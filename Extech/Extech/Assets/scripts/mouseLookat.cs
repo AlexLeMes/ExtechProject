@@ -9,18 +9,26 @@ public class mouseLookat : MonoBehaviour {
     public Transform target;
     public Vector3 aim;
 
+    //LOCATION OBJECT USED FOR PLAYER TO LOOK AT
+    //NOTE: DISABLE THE TEXTURE FOR GAME RELEASE
     public GameObject locationObject;
 
     private void Update()
     {
+        //RAYCASTING FROM THE MOUSE POSITION ON SCREEN
         RaycastHit hit;
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit))
         {
+            //SAVING RAYCAST HIT LOCATION AS aim
             aim = hit.point;
         }
 
-        //locationObject.transform.position = new Vector3(aim.x, aim.y, aim.z);
+        //MOVING THE LOCATION OBJECT USED FOR THE PLAYER TO LOOK AT
+        //TO THE POSITION OF THE RAYCAST HIT
+        locationObject.transform.position = new Vector3(aim.x, aim.y, aim.z);
+        //SETTING THE PLAYERS LOOKAT TARGET AS THE LOCATION OBJECT
+        target = locationObject.transform;
     }
 }

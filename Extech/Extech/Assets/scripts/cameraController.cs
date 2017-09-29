@@ -11,10 +11,6 @@ public class cameraController : MonoBehaviour {
     public float yDis = 0f;
     public float zDis = 0f;
 
-    public float xRotate = 0f;
-    public float yRotate = 0f;
-    public float zRotate = 0f;
-
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -24,7 +20,5 @@ public class cameraController : MonoBehaviour {
     private void Update()
     {
         transform.position = new Vector3(pTrans.position.x + xDis, pTrans.position.y + yDis, pTrans.position.z + zDis);
-        //transform.rotation = pTrans.rotation;
-        //transform.Rotate(xRotate, pTrans.rotation.y + xRotate, zRotate);
     }
 }

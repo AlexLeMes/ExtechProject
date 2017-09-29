@@ -7,7 +7,7 @@ public class minimap : MonoBehaviour {
     GameObject player;
     Transform pTrans;
 
-    public float yDis = 25f;
+    public float hight = 25f;
 
     void Start ()
     {
@@ -17,6 +17,6 @@ public class minimap : MonoBehaviour {
 
 	void Update ()
     {
-        transform.position = new Vector3(pTrans.position.x, pTrans.position.y + yDis, pTrans.position.z);
+        transform.position = new Vector3(pTrans.position.x, pTrans.position.y + hight, pTrans.position.z);
     }
 }
